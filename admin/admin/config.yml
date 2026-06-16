@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "gallery_photos"
+    label: "Gallery — Photos"
+    label_singular: "Photo"
+    folder: "_photos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", hint: "e.g. Kirinyaga Farm at Sunrise"}
+      - {label: "Photo", name: "image", widget: "image"}
+      - {label: "Category", name: "category", widget: "select", options: ["farms","cherries","process","people","beans"]}
+      - {label: "Caption", name: "caption", widget: "string", required: false}
+      - {label: "Region", name: "region", widget: "string", required: false, hint: "e.g. Kirinyaga"}
+
+  - name: "gallery_videos"
+    label: "Gallery — Videos"
+    label_singular: "Video"
+    folder: "_videos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "YouTube Video ID", name: "youtube_id", widget: "string", hint: "From youtube.com/watch?v=XXXX — just paste the XXXX part"}
+      - {label: "Subtitle", name: "subtitle", widget: "string", required: false, hint: "e.g. Kirinyaga · Harvest season"}
