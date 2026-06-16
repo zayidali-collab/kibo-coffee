@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Story — Kibo Coffee</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.page-hero{position:relative;height:55vh;min-height:420px;display:flex;align-items:flex-end;padding:0 7rem 4rem;overflow:hidden}
+.page-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45) saturate(.9)}
+.page-hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,20,18,.35),rgba(31,20,18,.7))}
+.ph-c{position:relative;z-index:2}
+.ph-eye{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block;font-weight:700}
+.ph-title{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,7.5rem);font-weight:800;color:var(--silk);line-height:.95}
+.ph-title em{font-style:italic;color:var(--gold)}
+
+.about-wrap{max-width:1300px;margin:0 auto;padding:0 7rem}
+.about-intro{display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;padding:7rem 0;align-items:center}
+.lead{font-family:var(--font-display);font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:700;color:var(--espresso);line-height:1.4;margin-bottom:1.6rem;font-style:italic}
+.about-intro-text p{font-size:15px;line-height:2.1;color:var(--charcoal);margin-bottom:1.1rem}
+.about-intro-img{position:relative}
+.about-intro-img img{width:100%;height:480px;object-fit:cover}
+.about-intro-img-frame{position:absolute;top:1.3rem;right:-1.3rem;bottom:-1.3rem;left:1.3rem;border:2px solid var(--gold);pointer-events:none}
+
+.mission-section{background:var(--linen);padding:6rem 7rem;display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+.mission-values{display:grid;gap:2px;background:var(--linen-dark);margin-top:2rem}
+.mv{background:var(--silk);padding:2.2rem;border-left:4px solid transparent;transition:all .3s}
+.mv:hover{border-left-color:var(--gold);padding-left:2.7rem}
+.mv-num{font-family:var(--font-display);font-size:2.6rem;font-weight:800;color:var(--gold-light);line-height:1;margin-bottom:.6rem}
+.mv-title{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--espresso);margin-bottom:.5rem}
+.mv-text{font-size:13px;color:var(--charcoal);line-height:1.8}
+
+.timeline{padding:6rem 0}
+.tl-title{text-align:center;margin-bottom:4rem}
+.tl-items{position:relative;padding-left:2.5rem;max-width:760px;margin:0 auto}
+.tl-items::before{content:'';position:absolute;left:0;top:.4rem;bottom:0;width:2px;background:var(--linen-dark)}
+.tl-item{position:relative;padding:0 0 3rem 2.5rem}
+.tl-item::before{content:'';position:absolute;left:-7px;top:.3rem;width:12px;height:12px;border:3px solid var(--gold);transform:rotate(45deg);background:var(--silk)}
+.tl-year{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.4rem;font-weight:800}
+.tl-heading{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--espresso);margin-bottom:.5rem}
+.tl-desc{font-size:14px;color:var(--charcoal);line-height:1.9}
+
+.team-strip{background:var(--linen);padding:6rem 7rem;text-align:center}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--linen-dark);margin-top:3rem;max-width:1000px;margin-left:auto;margin-right:auto}
+.team-card{background:var(--silk);padding:2.6rem 2rem;transition:background .3s}
+.team-card:hover{background:var(--gold-light)}
+.team-icon{width:64px;height:64px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:1.6rem}
+.team-name{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--espresso);margin-bottom:.2rem}
+.team-role{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.8rem;font-weight:700}
+.team-bio{font-size:13px;color:var(--charcoal);line-height:1.8}
+
+@media(max-width:900px){
+  .page-hero{padding:0 2rem 3rem}
+  .about-wrap{padding:0 1.5rem}
+  .about-intro{grid-template-columns:1fr;gap:2.5rem;padding:4rem 0}
+  .about-intro-img{display:none}
+  .mission-section{grid-template-columns:1fr;gap:2.5rem;padding:4rem 1.5rem}
+  .team-strip{padding:4rem 1.5rem}
+  .team-grid{grid-template-columns:1fr}
+}
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<div class="page-transition in"></div><div id="progress"></div><div id="cur"></div><div id="cur-ring"></div>
+<nav id="mainnav">
+  <a href="index.html" class="nav-logo">KIBO</a>
+  <ul class="nav-links">
+    <li class="nav-item"><a href="index.html">Home</a></li>
+    <li class="nav-item"><a href="about.html">Our Story</a></li>
+    <li class="nav-item"><a href="catalogue.html">Collection ▾</a><div class="nav-dropdown"><a href="catalogue.html#summit">Summit Reserve</a><a href="catalogue.html#midnight">Midnight Bloom</a><a href="catalogue.html#golden">Golden Mist</a></div></li>
+    <li class="nav-item"><a href="farms.html">Our Farms</a></li>
+    <li class="nav-item"><a href="process.html">Process</a></li>
+    <li class="nav-item"><a href="export.html">Export</a></li>
+    <li class="nav-item"><a href="sustainability.html">Sustainability</a></li>
+    <li class="nav-item"><a href="gallery.html">Gallery</a></li><li class="nav-item"><a href="press.html">Press</a></li>
+  </ul>
+  <div class="nav-right"><a href="contact.html" class="nav-cta">Contact</a><button class="lang-btn" id="lang-btn" style="background:none;border:1.5px solid var(--linen-dark);color:var(--espresso);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;cursor:pointer;font-family:var(--font-body);font-weight:700;transition:all .3s;margin-right:.5rem" onmouseover="this.style.borderColor='var(--gold-dark)'" onmouseout="this.style.borderColor='var(--linen-dark)'">عربي</button><button class="nav-hamburger" id="nav-hbg"><span></span><span></span><span></span></button></div>
+</nav>
+<div class="mobile-menu" id="mob-menu">
+  <a href="index.html">Home</a><a href="about.html">Our Story</a><a href="catalogue.html">Collection</a>
+  <a href="farms.html">Our Farms</a><a href="process.html">Process</a><a href="export.html">Export</a>
+  <a href="sustainability.html">Sustainability</a><a href="gallery.html">Gallery</a><a href="press.html">Press</a><a href="contact.html">Contact</a>
+</div>
+
+<section class="page-hero">
+  <img src="new4.jpg" alt="Kenya coffee estate farm about Kibo">
+  <div class="page-hero-ov"></div>
+  <div class="ph-c rv">
+    <span class="ph-eye">Our Story</span>
+    <h1 class="ph-title">Born in the<br><em>Highlands.</em></h1>
+  </div>
+</section>
+
+<div class="marquee-bar"><div class="marquee-track">
+  <span class="marquee-item">Kenya AA Grade</span><span class="marquee-dot">✦</span><span class="marquee-item">Kirinyaga · 1,900m</span><span class="marquee-dot">✦</span><span class="marquee-item">Founded in Nairobi</span><span class="marquee-dot">✦</span><span class="marquee-item">Gulf Export Specialists</span><span class="marquee-dot">✦</span>
+  <span class="marquee-item">Kenya AA Grade</span><span class="marquee-dot">✦</span><span class="marquee-item">Kirinyaga · 1,900m</span><span class="marquee-dot">✦</span><span class="marquee-item">Founded in Nairobi</span><span class="marquee-dot">✦</span><span class="marquee-item">Gulf Export Specialists</span><span class="marquee-dot">✦</span>
+</div></div>
+
+<div class="about-wrap">
+  <div class="about-intro">
+    <div class="about-intro-text rv-l">
+      <p class="lead">"Kenya has always grown the world's finest coffee. We simply decided the world deserves to know exactly where it comes from — and who grew it."</p>
+      <p>Kibo was founded in Nairobi with a single conviction — that the highlands of Kirinyaga, Nyeri and Murang'a produce coffee that belongs alongside the greatest luxury goods in the world. Not as a commodity. Not as an afterthought. But as the centrepiece of a world-class brand.</p>
+      <p>For too long, Kenya's AA grade coffee has been exported as a raw material, stripped of its story, blended into anonymity, and sold without the premium it deserves. Kibo was created to change that. Every lot we source is traceable, every farm we work with is visited, and every buyer we supply understands exactly what they are receiving and where it came from.</p>
+      <p>Our name comes from Kibo — the highest peak of Kilimanjaro, Africa's roof. It represents altitude, excellence, and the conviction that the best things in life are found at the top.</p>
+      <div style="margin-top:2rem"><a href="catalogue.html" class="btn-primary">Explore Our Collection</a></div>
+    </div>
+    <div class="about-intro-img rv-r">
+      <img src="new19.jpg" alt="Luxury coffee still life Kibo">
+      <div class="about-intro-img-frame"></div>
+    </div>
+  </div>
+</div>
+
+<div class="mission-section">
+  <div class="rv">
+    <span class="section-eye">Our Mission</span>
+    <h2 class="section-title">What We Stand <em>For</em></h2>
+    <p class="section-body">Four principles guide every decision we make — from the farm we partner with to the contract we sign.</p>
+  </div>
+  <div class="mission-values">
+    <div class="mv rv"><div class="mv-num">01</div><div class="mv-title">Uncompromising Quality</div><div class="mv-text">We only source AA and AB grade lots. If a harvest doesn't meet our cupping standard, we don't buy it. No exceptions.</div></div>
+    <div class="mv rv d2"><div class="mv-num">02</div><div class="mv-title">Full Traceability</div><div class="mv-text">Every lot is traceable to the cooperative, the region, and the harvest date. No blends. No anonymity. Complete transparency from farm to buyer.</div></div>
+    <div class="mv rv d3"><div class="mv-num">03</div><div class="mv-title">Farmer Partnership</div><div class="mv-text">We pay premium prices directly to cooperatives. We visit every farm we source from. The people who grow Kibo coffee share in its success.</div></div>
+    <div class="mv rv d4"><div class="mv-num">04</div><div class="mv-title">Luxury Positioning</div><div class="mv-text">Kenya AA is one of the rarest coffees on earth. We market it as such — not as a commodity but as a world-class luxury product deserving world-class buyers.</div></div>
+  </div>
+</div>
+
+<div class="about-wrap">
+  <div class="timeline">
+    <div class="tl-title"><span class="section-eye rv">Our Journey</span><h2 class="section-title rv d2">The Kibo <em>Story</em></h2></div>
+    <div class="tl-items">
+      <div class="tl-item rv"><div class="tl-year">2025</div><h3 class="tl-heading">The Idea</h3><p class="tl-desc">Founded in Nairobi with a vision to create the world's most luxurious Kenyan coffee export brand. First farm visits in Kirinyaga, Nyeri and Murang'a.</p></div>
+      <div class="tl-item rv"><div class="tl-year">2026 · Q1</div><h3 class="tl-heading">Kibo is Born</h3><p class="tl-desc">kibo.coffee launches. Brand identity, packaging concept and the first three lots — Summit Reserve, Midnight Bloom and Golden Mist — are established.</p></div>
+      <div class="tl-item rv"><div class="tl-year">2026 · Q2</div><h3 class="tl-heading">Gulf Market Entry</h3><p class="tl-desc">First export inquiries from UAE and Saudi Arabia. Export infrastructure established with FOB Mombasa shipping routes to all six Gulf markets.</p></div>
+      <div class="tl-item rv"><div class="tl-year">2026 & Beyond</div><h3 class="tl-heading">The World Awaits</h3><p class="tl-desc">Private label programme launching for Gulf luxury hotel partners. Expansion into European specialty market planned. The Kibo story is just beginning.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="team-strip">
+  <span class="section-eye rv">The Team</span>
+  <h2 class="section-title rv d2" style="text-align:center">The People Behind <em>Kibo</em></h2>
+  <div class="team-grid">
+    <div class="team-card rv"><div class="team-icon">☕</div><div class="team-name">Zayid A Ali</div><div class="team-role">Founder & CEO</div><div class="team-bio">Kenya-born entrepreneur with deep roots in Kenya's agricultural sector. Passionate about elevating African premium products to the global luxury market.</div></div>
+    <div class="team-card rv d2"><div class="team-icon">🌿</div><div class="team-name">Sourcing Team</div><div class="team-role">Farm Relations</div><div class="team-bio">Based across Kirinyaga, Nyeri and Murang'a. Direct relationships with cooperative managers and the farming families who grow every Kibo lot.</div></div>
+    <div class="team-card rv d3"><div class="team-icon">✈️</div><div class="team-name">Export Desk</div><div class="team-role">Gulf Markets</div><div class="team-bio">Specialist knowledge of UAE, KSA, Qatar and GCC import regulations. Managing every shipment from FOB Mombasa to your facility.</div></div>
+  </div>
+</div>
+
+<div style="padding:6rem 7rem;text-align:center;background:var(--silk)">
+  <span class="section-eye rv">Ready to Work Together?</span>
+  <h2 class="section-title rv d2" style="text-align:center">Begin Your <em>Partnership</em></h2>
+  <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem" class="rv d3">
+    <a href="catalogue.html" class="btn-primary">View the Collection</a>
+    <a href="contact.html" class="btn-outline">Get in Touch</a>
+  </div>
+</div>
+
+<footer class="site-footer"><div class="footer-grid"><div class="footer-brand"><div class="f-logo">KIBO</div><div class="f-tag">Kenya's Most Luxurious Coffee Export</div><p>Sourcing Kenya's finest AA grade highland coffee. Exporting to the Gulf since 2026.</p></div><div class="footer-col"><h4>Navigate</h4><nav><a href="index.html">Home</a><a href="about.html">Our Story</a><a href="catalogue.html">Collection</a><a href="farms.html">Our Farms</a><a href="process.html">Process</a><a href="export.html">Export</a><a href="sustainability.html">Sustainability</a><a href="gallery.html">Gallery</a><a href="press.html">Press</a><a href="contact.html">Contact</a></nav></div><div class="footer-col"><h4>Collection</h4><nav><a href="catalogue.html#summit">Summit Reserve</a><a href="catalogue.html#midnight">Midnight Bloom</a><a href="catalogue.html#golden">Golden Mist</a></nav></div><div class="footer-col"><h4>Contact</h4><p><a href="mailto:sales@kibo.coffee">sales@kibo.coffee</a></p><p><a href="mailto:export@kibo.coffee">export@kibo.coffee</a></p><p><a href="https://wa.me/971504936593">+971 50 493 6593</a></p><p>Nairobi, Kenya</p></div></div><div class="footer-bottom"><span class="footer-copy">© 2026 Kibo Coffee Exports Ltd · Nairobi, Kenya</span><span class="footer-copy">kibo.coffee</span></div></footer>
+<a href="https://wa.me/971504936593" class="float-wa" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<div id="back-top">↑</div>
+<div id="cookie"><p>We use cookies. <a href="#">Learn more</a></p><div class="cookie-btns"><button class="cookie-accept" id="cookie-accept">Accept</button><button class="cookie-decline" id="cookie-decline">Decline</button></div></div>
+<script src="shared.js"></script>
+</body></html>
